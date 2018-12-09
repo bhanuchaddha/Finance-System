@@ -9,9 +9,10 @@ This bank uses Spring Cloud services to provide highly scalable and distributed 
 3. Send money to another customer
 
 ## Services
-* Customer Service
-* Account Service
-* Payment Service
+* Customer Service Done
+* Account Service Done
+* Payment Service Done
+* Messaging Layer Done
 
 ## Cloud Features
 * Service Discovery

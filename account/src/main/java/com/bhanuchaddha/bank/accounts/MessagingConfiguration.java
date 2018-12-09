@@ -1,5 +1,6 @@
 package com.bhanuchaddha.bank.accounts;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -25,9 +26,12 @@ public class MessagingConfiguration {
         return new ChannelTopic("payments");
     }
 
+    @Autowired
+    RedisMessageSubscriber redisMessageSubscriber;
+
     @Bean
-    MessageListenerAdapter messageListener() {
-        return new MessageListenerAdapter(new RedisMessageSubscriber());
+    MessageListenerAdapter messageListener( ) {
+        return new MessageListenerAdapter(redisMessageSubscriber);
     }
 
     @Bean
