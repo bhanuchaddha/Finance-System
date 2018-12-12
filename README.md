@@ -1,7 +1,7 @@
-# Bank on Cloud
+# Finance System
 
-This is a simulation of basic features of a Bank.
-This bank uses Spring Cloud services to provide highly scalable and distributed application.
+This is a simulation of basic features of a Finance System.
+This system uses Spring Cloud services to provide highly available, scalable and distributed application.
 
 ## Functionalities
 1. Become Customer

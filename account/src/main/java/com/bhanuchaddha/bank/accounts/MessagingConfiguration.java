@@ -42,12 +42,4 @@ public class MessagingConfiguration {
         container.addMessageListener(messageListener(), topic());
         return container;
     }
-
-    @Bean
-    public RedisTemplate<String, Payment> redisTemplate() {
-        final RedisTemplate<String, Payment> template = new RedisTemplate<String, Payment>();
-        template.setConnectionFactory(jedisConnectionFactory());
-        template.setValueSerializer(new Jackson2JsonRedisSerializer<Payment>(Payment.class));
-        return template;
-    }
 }
