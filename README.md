@@ -19,6 +19,7 @@ This system uses Spring Cloud services to provide highly available, scalable and
 * Distributed Configuration
 * Circuit Breaker
 * Edge Service
+* Auto Scaling
 
 ## Road Map
 1. Create Maven module for different service
@@ -27,6 +28,6 @@ This system uses Spring Cloud services to provide highly available, scalable and
 4. Create Payment Service
 
 ##### Inspiration
-[Spring Cloud](http://spring.io/projects/spring-cloud)
-[Tutorial](https://www.devglan.com/spring-cloud/spring-cloud-tutorial)
-
+* [Spring Cloud](http://spring.io/projects/spring-cloud)
+* [Tutorial](https://www.devglan.com/spring-cloud/spring-cloud-tutorial)
+* [AutoScaling](https://dzone.com/articles/spring-boot-autoscaler)

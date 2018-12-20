@@ -11,6 +11,7 @@
 		<module>customer</module>
 		<module>payment</module>
 		<module>messaging-layer</module>
+		<module>service-registry</module>
 	</modules>
 	<packaging>pom</packaging>
 
