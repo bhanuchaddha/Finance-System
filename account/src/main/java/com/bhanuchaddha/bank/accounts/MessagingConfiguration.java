@@ -40,6 +40,7 @@ public class MessagingConfiguration {
                 = new RedisMessageListenerContainer();
         container.setConnectionFactory(jedisConnectionFactory());
         container.addMessageListener(messageListener(), topic());
+        container.setRecoveryInterval(2000000);
         return container;
     }
 }

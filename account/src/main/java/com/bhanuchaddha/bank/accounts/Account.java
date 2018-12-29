@@ -12,18 +12,19 @@ import java.math.BigDecimal;
 /**
  * Created by ben on 06-12-2018 03:52 PM.
  */
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
 public class Account {
     @Id
     @GeneratedValue
-    private long number;
-    private long customerNumber;
+    private Long number;
+    private Long customerNumber;
     private BigDecimal amount;
 
     public Account(BigDecimal amount) {
         this.amount = amount;
     }
+
 }

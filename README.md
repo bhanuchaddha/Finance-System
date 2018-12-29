@@ -21,11 +21,17 @@ This system uses Spring Cloud services to provide highly available, scalable and
 * Edge Service
 * Auto Scaling
 
+## Technical Features
+* Using DTO
+* [MapStruct](https://www.baeldung.com/mapstruct)
+* [Using lombok with mapstruck](https://stackoverflow.com/questions/47676369/mapstruct-and-lombok-not-working-togather)
+
 ## Road Map
-1. Create Maven module for different service
-2. Create Customer Service
-3. Create Account Service
-4. Create Payment Service
+1. Create Maven module for different service - DONE
+2. Create Customer Service - DONE
+3. Create Account Service - DONE
+4. Create Payment Service - DONE
+5. Rest input Validations
 
 ##### Inspiration
 * [Spring Cloud](http://spring.io/projects/spring-cloud)

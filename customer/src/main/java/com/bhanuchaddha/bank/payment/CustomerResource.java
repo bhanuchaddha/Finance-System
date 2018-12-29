@@ -1,5 +1,6 @@
 package com.bhanuchaddha.bank.payment;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -13,6 +14,7 @@ import java.math.BigDecimal;
  */
 @RestController
 @RequestMapping("/customer")
+@Slf4j
 public class CustomerResource {
 
     @Autowired
@@ -24,6 +26,9 @@ public class CustomerResource {
     @Value("${account.service.base.url}")
     private String accountsUrl;
 
+    @Value("${max-account}")
+    private int maxAccount;
+
     @GetMapping("/{id}")
     public Customer findCustomer(@PathVariable("id") long id) {
         return repository.findById(id)
@@ -32,6 +37,7 @@ public class CustomerResource {
 
     @PostMapping
     public Customer createCustomer(@RequestBody Customer customer) {
+        log.info("max-account",maxAccount);
         Customer newCustomer= repository.save(customer);
         RestTemplate restTemplate = restTemplateBuilder.build();
         restTemplate.postForEntity(
