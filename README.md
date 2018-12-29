@@ -7,12 +7,13 @@ This system uses Spring Cloud services to provide highly available, scalable and
 1. Become Customer
 2. Open Account
 3. Send money to another customer
+4. Take loan
 
 ## Services
-* Customer Service Done
-* Account Service Done
-* Payment Service Done
-* Messaging Layer Done
+* Customer Service - Done
+* Account Service - Done
+* Payment Service - Done
+* Messaging Layer - Done
 
 ## Cloud Features
 * Service Discovery
@@ -25,6 +26,7 @@ This system uses Spring Cloud services to provide highly available, scalable and
 * Using DTO
 * [MapStruct](https://www.baeldung.com/mapstruct)
 * [Using lombok with mapstruck](https://stackoverflow.com/questions/47676369/mapstruct-and-lombok-not-working-togather)
+* [Spring Configuration properties](https://www.baeldung.com/configuration-properties-in-spring-boot)
 
 ## Road Map
 1. Create Maven module for different service - DONE
@@ -32,6 +34,10 @@ This system uses Spring Cloud services to provide highly available, scalable and
 3. Create Account Service - DONE
 4. Create Payment Service - DONE
 5. Rest input Validations
+6. Service Matrix - Micrometer
+7. Loan Service
+8. Logging
+9. Tracing
 
 ##### Inspiration
 * [Spring Cloud](http://spring.io/projects/spring-cloud)

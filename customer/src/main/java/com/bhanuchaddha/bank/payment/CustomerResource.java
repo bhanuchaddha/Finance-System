@@ -1,48 +1,45 @@
 package com.bhanuchaddha.bank.payment;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * Created by ben on 12-12-2018 11:24 PM.
  */
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/customers")
 @Slf4j
+@RequiredArgsConstructor
 public class CustomerResource {
 
-    @Autowired
-    CustomerRepository repository;
-
-    @Autowired
-    RestTemplateBuilder restTemplateBuilder;
-
-    @Value("${account.service.base.url}")
-    private String accountsUrl;
-
-    @Value("${max-account}")
-    private int maxAccount;
+    private final CustomerRepository repository;
+    private final RestTemplateBuilder restTemplateBuilder;
+    private final CustomerProperties customerProperties;
 
     @GetMapping("/{id}")
-    public Customer findCustomer(@PathVariable("id") long id) {
+    public Customer findCustomer(@PathVariable("id") Long id) {
         return repository.findById(id)
                 .orElseThrow(()->  new RuntimeException("Customer not found"));
     }
 
+    @GetMapping
+    public List<Customer> getAllCustomers(){
+        return repository.findAll();
+    }
+
     @PostMapping
     public Customer createCustomer(@RequestBody Customer customer) {
-        log.info("max-account",maxAccount);
+        log.info("max-account",customerProperties.getMaximumAccountsPerCustomer());
         Customer newCustomer= repository.save(customer);
         RestTemplate restTemplate = restTemplateBuilder.build();
         restTemplate.postForEntity(
-                accountsUrl
-                ,new Account(newCustomer.getId(), BigDecimal.valueOf(1000l))
+                customerProperties.getAccountsUrl()
+                , new Account(newCustomer.getId(), customerProperties.getInitAccountBalance())
                 , Account.class);
         return newCustomer;
     }
