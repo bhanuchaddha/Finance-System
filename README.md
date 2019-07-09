@@ -38,6 +38,18 @@ This system uses Spring Cloud services to provide highly available, scalable and
 7. Loan Service
 8. Logging
 9. Tracing
+10. Dockerize each service
+11. Db and Redis in its own container
+12. Docker compose
+13. Kubernets
+14. Authentication
+15. Jwt token
+16. Casandra
+17. Deploy the services on Azure
+18. Implement Circuit breaker
+19. Error Handling
+20. Integration Adapter, Configuration
+
 
 ##### Inspiration
 * [Spring Cloud](http://spring.io/projects/spring-cloud)
