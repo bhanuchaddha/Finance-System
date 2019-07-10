@@ -1,7 +1,7 @@
 # Finance System
 
 This is a simulation of basic features of a Finance System.
-This system uses Spring Cloud services to provide highly available, scalable and distributed application.
+This Architecture has all the feature which should be available in a Cloud Native, Distributed architecture. 
 
 ## Functionalities
 1. Become Customer
@@ -15,12 +15,19 @@ This system uses Spring Cloud services to provide highly available, scalable and
 * Payment Service - Done
 * Messaging Layer - Done
 
-## Cloud Features
+## Cloud Native Features
 * Service Discovery
-* Distributed Configuration
-* Circuit Breaker
+* Load Balancing
+* Configuration Management
+* Data and state management
+* Log Aggregation
+* Distributed Tracing - Zipkin
+* Fault and Latency tolerance - Circuit Breaker, Hystrix
 * Edge Service
 * Auto Scaling
+* Feature Toggle - ff4j, togglz
+* Health Check - Spring boot actuator
+* Monitoring Dashboard
 
 ## Technical Features
 * Using DTO
@@ -55,3 +62,4 @@ This system uses Spring Cloud services to provide highly available, scalable and
 * [Spring Cloud](http://spring.io/projects/spring-cloud)
 * [Tutorial](https://www.devglan.com/spring-cloud/spring-cloud-tutorial)
 * [AutoScaling](https://dzone.com/articles/spring-boot-autoscaler)
+* https://developers.redhat.com/blog/2017/01/05/architectural-cross-cutting-concerns-of-cloud-native-applications/
