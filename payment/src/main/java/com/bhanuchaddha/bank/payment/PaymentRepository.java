@@ -13,6 +13,6 @@ import java.util.List;
 @RepositoryRestResource
 public interface PaymentRepository extends CrudRepository<Payment,Long> {
 
-    @Query("select p from Payment p where p.fromAccount = ?1 or p.toAccount = ?1")
+    @Query("select p from Payment p where p.fromAccount = ?1")
     List<Payment> getPaymentsForAccount(@Param("accountNumber") long accountNumber);
 }

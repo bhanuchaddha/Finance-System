@@ -15,6 +15,7 @@ This Architecture has all the feature which should be available in a Cloud Nativ
 * Payment Service - Done
 * Messaging Layer - Done
 
+
 ## Cloud Native Features
 * Service Discovery
 * Load Balancing
@@ -57,9 +58,18 @@ This Architecture has all the feature which should be available in a Cloud Nativ
 19. Error Handling
 20. Integration Adapter, Configuration
 
+## Startup sequence
+1. service-registry
+2. messaging-layer
+2. account
+3. customer
+4. payment
+
 
 ##### Inspiration
 * [Spring Cloud](http://spring.io/projects/spring-cloud)
 * [Tutorial](https://www.devglan.com/spring-cloud/spring-cloud-tutorial)
 * [AutoScaling](https://dzone.com/articles/spring-boot-autoscaler)
 * https://developers.redhat.com/blog/2017/01/05/architectural-cross-cutting-concerns-of-cloud-native-applications/
+
+
