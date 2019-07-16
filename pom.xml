@@ -11,7 +11,6 @@
 		<module>customer</module>
 		<module>payment</module>
 		<module>messaging-layer</module>
-		<module>service-registry</module>
 		<module>config-server</module>
 	</modules>
 	<packaging>pom</packaging>
@@ -33,9 +32,6 @@
 	</properties>
 
 	<dependencies>
-
-
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
