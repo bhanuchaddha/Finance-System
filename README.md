@@ -28,6 +28,7 @@ This Architecture has all the feature which should be available in a Cloud Nativ
 * [MapStruct](https://www.baeldung.com/mapstruct)
 * [Using lombok with mapstruck](https://stackoverflow.com/questions/47676369/mapstruct-and-lombok-not-working-togather)
 * [Spring Configuration properties](https://www.baeldung.com/configuration-properties-in-spring-boot)
+* Application Monitoring using Prometheus and Grafana
 
 
 ## Technical Road Map
@@ -81,14 +82,23 @@ Currently services can either be run standalone or as docker containers
 
 ## Run all the docker images
 1. ```docker run config-server -p8085:8085```
-2. ```docker run messaging-layer -p8085:8085```
-3. ```docker run account-service -p8085:8085```
-4. ```docker run customer -p8085:8085```
-5. ```docker run payment -p8085:8085```
+2. ```docker run messaging-layer -p8085:6379```
+3. ```docker run account-service -p8085:8081```
+4. ```docker run customer -p8085:8083```
+5. ```docker run payment -p8085:8082```
 
 
 ## Test API
 [https://documenter.getpostman.com/view/3772012/SVSKKnyZ?version=latest](https://documenter.getpostman.com/view/3772012/SVSKKnyZ?version=latest)
+
+
+
+## Application Monitoring
+Application Monitoring for this Finance System is done using Prometheus and Grafana. Different metrics from all the service is exposed and periodically scraped by Prometheus.
+Grafana is used to visualize these metrics. More details can be found at [Application Monitoring](wiki/Application-Monitoring.md)
+![Monitoring Dashboard](wiki/images/jvm_micrometer_dashboard.png)
+
+
 
 
 ##### Inspiration
