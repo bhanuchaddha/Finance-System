@@ -63,13 +63,31 @@ This Architecture has all the feature which should be available in a Cloud Nativ
 * Monitoring Dashboard
 
 
+
+
+# Try it
+
+Currently services can either be run standalone or as docker containers
+
 ## Startup sequence
+0. config-server
 1. messaging-layer
 2. account
 3. customer
 4. payment
 
-# Try it
+## Build All docker files
+```mvn clean install -Ddocker-build```
+
+## Run all the docker images
+1. ```docker run config-server -p8085:8085```
+2. ```docker run messaging-layer -p8085:8085```
+3. ```docker run account-service -p8085:8085```
+4. ```docker run customer -p8085:8085```
+5. ```docker run payment -p8085:8085```
+
+
+## Test API
 [https://documenter.getpostman.com/view/3772012/SVSKKnyZ?version=latest](https://documenter.getpostman.com/view/3772012/SVSKKnyZ?version=latest)
 
 
