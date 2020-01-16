@@ -106,5 +106,6 @@ Grafana is used to visualize these metrics. More details can be found at [Applic
 * [Tutorial](https://www.devglan.com/spring-cloud/spring-cloud-tutorial)
 * [AutoScaling](https://dzone.com/articles/spring-boot-autoscaler)
 * https://developers.redhat.com/blog/2017/01/05/architectural-cross-cutting-concerns-of-cloud-native-applications/
+* https://www.baeldung.com/rest-assured-tutorial
 
 

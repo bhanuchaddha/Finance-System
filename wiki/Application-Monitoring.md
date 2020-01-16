@@ -469,6 +469,8 @@ You can save the hassle and import already available dashboards. One such awesom
 ![JVM Dashboard](images/jvm_micrometer_dashboard.png)
 
 
+##TODO
+1. Show correct service name versions in the dashboard by exposing service parameters
 
 #### Reference
 * https://www.callicoder.com/spring-boot-actuator

@@ -12,6 +12,7 @@
 		<module>payments</module>
 		<module>messaging-layer</module>
 		<module>config-server</module>
+		<module>api-testing</module>
 	</modules>
 	<packaging>pom</packaging>
 
