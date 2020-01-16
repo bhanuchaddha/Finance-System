@@ -1,36 +1,20 @@
+package com.bhanuchaddha.bank.apitest;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
-import org.junit.Before;
-import org.junit.Test;
+import lombok.experimental.UtilityClass;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.equalTo;
+import java.util.List;
 
-public class MakePaymentTest {
+import static io.restassured.RestAssured.get;
+import static io.restassured.RestAssured.with;
 
-    @Before
-    public void setup(){
-        RestAssured.reset();
-    }
+@UtilityClass
+public class HelperMethods {
 
-    @Test
-    public void fullScenario(){
-        int customer1 = createCustomer();
-        int customer2 = createCustomer();
-        int account1 = createAccount(customer1);
-        int account2 = createAccount(customer2);
-        int paymentId = createPayment(account1, account2, 400);
-        Response payment = getPayment(paymentId);
-        payment.then().assertThat()
-                .body("fromAccount",equalTo(account1))
-                .body("toAccount",equalTo(account2))
-                .body("amount",equalTo(400f));
-
-    }
-
-    private int createCustomer(){
+    int createCustomer(){
         RestAssured.reset();
         RestAssured.baseURI="http://localhost:8083";
 
@@ -46,7 +30,7 @@ public class MakePaymentTest {
                 .body().jsonPath().get("id");
     }
 
-    private int createAccount(int customerId){
+    int createAccount(int customerId){
         RestAssured.reset();
         RestAssured.baseURI="http://localhost:8081";
 
@@ -61,7 +45,7 @@ public class MakePaymentTest {
                 .response()
                 .body().jsonPath().get("number");
     }
-    private int createPayment(int fromAccount, int toAccount, int amount){
+    int createPayment(int fromAccount, int toAccount, int amount){
         RestAssured.reset();
         RestAssured.baseURI="http://localhost:8082";
 
@@ -77,7 +61,7 @@ public class MakePaymentTest {
                 .body().jsonPath().get("id");
     }
 
-    private Response getPayment(int id){
+    Response getPayment(int id){
         RestAssured.reset();
         RestAssured.baseURI="http://localhost:8082";
         return get("/payments/{paymentId}",id)
@@ -85,5 +69,19 @@ public class MakePaymentTest {
                 .statusCode(200)
                 .extract()
                 .response();
+    }
+
+    List<Integer> getAllAccountIds(){
+        RestAssured.reset();
+        RestAssured.baseURI="http://localhost:8081";
+
+        return get("/accounts")
+                .then()
+                .statusCode(200)
+                .extract()
+                .response()
+                .jsonPath()
+                .getList("number")
+                ;
     }
 }
