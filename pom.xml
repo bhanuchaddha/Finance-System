@@ -7,11 +7,12 @@
 	<artifactId>finance-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>account</module>
-		<module>customer</module>
-		<module>payment</module>
+		<module>accounts</module>
+		<module>customers</module>
+		<module>payments</module>
 		<module>messaging-layer</module>
 		<module>config-server</module>
+		<module>api-testing</module>
 	</modules>
 	<packaging>pom</packaging>
 

@@ -29,11 +29,11 @@ This Architecture has all the feature which should be available in a Cloud Nativ
 * [Using lombok with mapstruck](https://stackoverflow.com/questions/47676369/mapstruct-and-lombok-not-working-togather)
 * [Spring Configuration properties](https://www.baeldung.com/configuration-properties-in-spring-boot)
 * Application Monitoring using Prometheus and Grafana
+* Api Testing with Rest Assured
 
 
 ## Technical Road Map
 5. Rest input Validations
-6. Service Matrix - Micrometer
 8. Logging
 9. Tracing
 10. Dockerize each service
@@ -83,7 +83,7 @@ Currently services can either be run standalone or as docker containers
 ## Run all the docker images
 1. ```docker run config-server -p8085:8085```
 2. ```docker run messaging-layer -p8085:6379```
-3. ```docker run account-service -p8085:8081```
+3. ```docker run accounts -p8085:8081```
 4. ```docker run customer -p8085:8083```
 5. ```docker run payment -p8085:8082```
 
@@ -106,5 +106,6 @@ Grafana is used to visualize these metrics. More details can be found at [Applic
 * [Tutorial](https://www.devglan.com/spring-cloud/spring-cloud-tutorial)
 * [AutoScaling](https://dzone.com/articles/spring-boot-autoscaler)
 * https://developers.redhat.com/blog/2017/01/05/architectural-cross-cutting-concerns-of-cloud-native-applications/
+* https://www.baeldung.com/rest-assured-tutorial
 
 
