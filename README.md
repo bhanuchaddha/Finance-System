@@ -48,6 +48,7 @@ This Architecture has all the feature which should be available in a Cloud Nativ
 19. Error Handling
 20. Integration Adapter, Configuration
 21. Use Flyway
+22. Use CICD with Kubernetes
 
 ## Cloud Native Features
 * Service Discovery
